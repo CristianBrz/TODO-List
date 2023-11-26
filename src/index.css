@@ -1,0 +1,169 @@
+:root {
+  --primary-100: #c21d03;
+  --primary-200: #fd5732;
+  --primary-300: #ffb787;
+  --accent-100: #393939;
+  --accent-200: #bebebe;
+  --text-100: #232121;
+  --text-200: #aaaaaa;
+  --bg-100: #fbfbfb;
+  --bg-200: #f1f1f1;
+  --bg-300: #c8c8c8;
+  --shadow: #00000050;
+}
+
+* {
+  font-family: "Josefin Sans", Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-200);
+}
+
+main {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+h1 {
+  margin: 50px 0;
+}
+
+table {
+  width: 80%;
+  max-width: 1024px;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: var(--bg-100);
+  box-shadow: 0 0 10px var(--shadow);
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+tbody td:nth-child(1) {
+  width: 80%;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+.task {
+  text-align: left;
+}
+
+.table-header {
+  height: 60px;
+  font-size: 1.4rem;
+  background: linear-gradient(
+    180deg,
+    var(--primary-100) 50%,
+    var(--primary-200)
+  );
+  color: var(--primary-300);
+  /* color: var(--text-100); */
+}
+
+tr:nth-child(even) {
+  background-color: var(--bg-200);
+}
+
+tr:hover {
+  background-color: var(--accent-200);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+form {
+  position: relative;
+  margin-bottom: 30px;
+  width: 500px;
+}
+
+input {
+  border-radius: 25px;
+  padding: 10px 20px;
+  height: 50px;
+  width: 100%;
+  border: 2px solid;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+@media screen and (max-width: 425px) {
+  table,
+  form {
+    width: 95%;
+  }
+}
+
+input,
+i {
+  font-size: 1rem;
+}
+
+::placeholder {
+  color: var(--text-200);
+}
+
+button {
+  height: 35px;
+  width: 35px;
+  border: 0;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.table-button:hover,
+.add-button:hover {
+  color: var(--bg-100);
+  background-color: var(--primary-200);
+  cursor: pointer;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+}
+
+.table-button:active,
+.add-button:active {
+  color: var(--bg-100);
+  background-color: var(--primary-100);
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+}
+
+.add-button {
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: unset;
+}
