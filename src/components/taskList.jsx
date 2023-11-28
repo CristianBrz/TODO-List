@@ -1,22 +1,26 @@
-import TaskItem from "./taskItem"
+import TaskItem from "./taskItem";
 
-const TaskList = () => {
+const TaskList = ({ tasks, handleComplete, handleDelete }) => {
+  // console.log(tasks);
   return (
     <table>
-    <thead>
-      <tr className="table-header">
-        <th colSpan="4">Tareas pendientes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <TaskItem/>
-      <TaskItem/>
-      <TaskItem/>
-      <TaskItem/>
-      <TaskItem/>
-    </tbody>
-  </table>
-  )
-}
+      <thead>
+        <tr className="table-header">
+          <th colSpan="4">Tareas pendientes</th>
+        </tr>
+      </thead>
+      <tbody>
+        {tasks.map((task) => (
+          <TaskItem
+            key={task.id}
+            task={task}
+            handleComplete={() => handleComplete(task.id)}
+            handleDelete={() => handleDelete(task.id)}
+          />
+        ))}
+      </tbody>
+    </table>
+  );
+};
 
-export default TaskList 
+export default TaskList;

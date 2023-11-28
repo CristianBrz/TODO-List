@@ -1,12 +1,7 @@
-import ToDo from "./components/ToDo"
+import ToDo from "./components/ToDo";
 
 function App() {
-
-  return (
-    <main>
-      <ToDo/>
-    </main>
-  )
+  return <ToDo />;
 }
 
-export default App
+export default App;

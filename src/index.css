@@ -65,6 +65,17 @@ td {
 
 .task {
   text-align: left;
+
+  /* interrumpir palabras largas sin espacios */
+  /* https://es.stackoverflow.com/questions/45312/css-ajuste-de-l%C3%ADneas-con-palabras-largas-y-sin-espacios-que-superan-el-ancho-d */
+  -ms-word-break: break-all;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word; /* Sólo WebKit -NO DOCUMENTADO */
+  -ms-hyphens: auto; /* Guiones para separar en sílabas */
+  -moz-hyphens: auto; /*  depende de lang en <html>      */
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .table-header {
@@ -76,7 +87,6 @@ td {
     var(--primary-200)
   );
   color: var(--primary-300);
-  /* color: var(--text-100); */
 }
 
 tr:nth-child(even) {
