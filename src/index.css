@@ -65,6 +65,7 @@ td {
 
 .task {
   text-align: left;
+  font-size: large;
 
   /* interrumpir palabras largas sin espacios */
   /* https://es.stackoverflow.com/questions/45312/css-ajuste-de-l%C3%ADneas-con-palabras-largas-y-sin-espacios-que-superan-el-ancho-d */

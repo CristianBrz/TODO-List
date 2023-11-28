@@ -1,4 +1,4 @@
-import ToDo from "./components/ToDo";
+import ToDo from "./components/toDo";
 
 function App() {
   return <ToDo />;
