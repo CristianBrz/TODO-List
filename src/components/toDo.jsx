@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import tareas from "../data.js";
 
 import TaskForm from "./taskForm";
@@ -7,12 +7,19 @@ import TaskList from "./taskList";
 // console.log(DATA);
 
 const ToDo = () => {
+  
+  const storedTasks = JSON.parse(localStorage.getItem("tasks"));
 
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(storedTasks);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const addTask = (taskName) => {
     const newTask = {
-      id: tasks.length + 1,
+      // id: tasks.length + 1,
+      id: new Date().getTime(),
       nombre: taskName,
       realizado: false,
     };
@@ -25,7 +32,7 @@ const ToDo = () => {
       prevTasks.map((task) =>
         // task.id === taskId ? task.realizado = true : ""
         // task.id === taskId ? {...task, realizado: true} : ""
-        task.id === taskId ? {...task, realizado: true} : task
+        task.id === taskId ? { ...task, realizado: true } : task
       )
     );
   };
