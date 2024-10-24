@@ -10,7 +10,7 @@ const ToDo = () => {
   
   const storedTasks = JSON.parse(localStorage.getItem("tasks"));
 
-  const [tasks, setTasks] = useState(storedTasks);
+  const [tasks, setTasks] = useState(storedTasks || []);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -32,7 +32,7 @@ const ToDo = () => {
       prevTasks.map((task) =>
         // task.id === taskId ? task.realizado = true : ""
         // task.id === taskId ? {...task, realizado: true} : ""
-        task.id === taskId ? { ...task, realizado: true } : task
+        task.id === taskId ? { ...task, realizado: true } : task 
       )
     );
   };
